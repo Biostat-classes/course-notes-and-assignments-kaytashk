@@ -139,10 +139,54 @@ INSERT AN R CHUNK HERE AND RUN EACH OF THESE COMMANDS. Add a new chunk
 by clicking the *Insert Chunk* button on the toolbar or by pressing
 *Ctrl+Alt+I*. Then state what each of these does.
 
+```{r}
+length (x)
+```
+
+length returns the numbers of items
+
+```{r}
+max(x)
+
+```
+
+max returns the highest value
+
+```{r}
+x[x < 10]
+```
+
+square brackets allows you to return only portions of a vector
+
+```{r}
+x^2
+```
+
+\^2 squares a value
+
+```{r}
+x[ x < 12 & x > 7]
+```
+
 #### 3
 
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND
 RUN EACH OF THESE COMMANDS. Then state what each of these does.
+
+```{r}
+-1:2
+
+```
+
+```{r}
+(-1):2
+```
+
+```{r}
+-(1:2)
+```
+
+It's the same as `-(1:2). These commands run a sequence.`
 
 ### Data input, plotting, and tests
 
@@ -165,12 +209,28 @@ of data is stored in each variable?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+```{r}
+dim(sleep)
+```
+
+dim returns the numbers and rows in a dataframe
+
+```{r}
+str(sleep)
+```
+
+str returns the size of the data set and the class of each column.
+
 #### 5
 
 Change the column named *BodyWt* to *Body_weight*"\* in the sleep
 dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
+
+```{r}
+names(sleep)[names(sleep) %in% "BodyWt"] <- "Body_weight"
+```
 
 #### 6
 
@@ -208,6 +268,10 @@ NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.
 plot(cars)
 ```
 
+```{r}
+plot(TotalSleep ~ Primate, sleep)
+```
+
 #### 7
 
 The **sleep** dataset begs to have a linear model fit for it. Let's
@@ -217,6 +281,24 @@ model to obtain the p-value for the model (hint: summary()). What does
 this imply?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+```{r}
+plot(TotalSleep ~ BrainWt, sleep)
+```
+
+```{r}
+sleep_fit <- lm(TotalSleep ~ BrainWt, sleep[sleep$BrainWt<1000,])
+summary(sleep_fit)
+
+```
+
+```{r}
+plot(TotalSleep ~ BrainWt, data = sleep[sleep$BrainWt <  1000, ])
+abline(sleep_fit)
+```
+
+There is a significant relationship between brain weight and total
+sleep.
 
 ### EXTRA QUESTIONS
 
