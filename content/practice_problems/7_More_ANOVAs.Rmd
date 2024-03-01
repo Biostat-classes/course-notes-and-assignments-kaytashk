@@ -1,6 +1,9 @@
 ---
 title: "More ANOVAs"
 bibliography: ../references.bib
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 <!-- COMMENT NOT SHOW IN ANY OUTPUT: Code chunk below sets overall defaults for .qmd file; these inlcude showing output by default and looking for files relative to .Rpoj file, not .qmd file, which makes putting filesin different folders easier  -->
@@ -12,16 +15,17 @@ knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 
 Remember you should
 
-* add code chunks by clicking the *Insert Chunk* button on the toolbar or by
-pressing *Ctrl+Alt+I* to answer the questions!
-* **knit** your file to produce a markdown version that you can see!
-* save your work often 
-  * **commit** it via git!
-  * **push** updates to github
-  
+-   add code chunks by clicking the *Insert Chunk* button on the toolbar
+    or by pressing *Ctrl+Alt+I* to answer the questions!
+-   **knit** your file to produce a markdown version that you can see!
+-   save your work often
+    -   **commit** it via git!
+    -   **push** updates to github
+
 ## Overview
 
-This practice reviews the [More ANOVAs lecuture](../chapters/More_ANOVAs.qmd).
+This practice reviews the [More ANOVAs
+lecuture](../chapters/More_ANOVAs.qmd).
 
 ## Examples
 
